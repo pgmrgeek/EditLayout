@@ -1,0 +1,10 @@
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\bin\Release\EditLayout.exe
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\bin\Release\EditLayout.pdb
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\bin\Release\EditLayout.xml
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\WindowsApplication1.EditLayout.resources
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\WindowsApplication1.Resources.resources
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\WindowsApplication1.OpenLayout.resources
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\EditLayout.vbproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\EditLayout.exe
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\EditLayout.xml
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\EditLayout.pdb

@@ -1,0 +1,10 @@
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Debug\WindowsApplication1.OpenLayout.resources
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Debug\EditLayout.vbproj.GenerateResource.Cache
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Debug\WindowsApplication1.EditLayout.resources
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\bin\Debug\EditLayout.exe
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\bin\Debug\EditLayout.pdb
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\bin\Debug\EditLayout.xml
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Debug\EditLayout.exe
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Debug\EditLayout.xml
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Debug\EditLayout.pdb
