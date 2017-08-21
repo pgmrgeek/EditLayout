@@ -2,7 +2,6 @@
 Imports System.IO
 Imports System.Threading
 
-
 '====================================================================
 '                              EditLayout
 '====================================================================
@@ -23,10 +22,6 @@ Imports System.Threading
 Public Class EditLayout
 
     Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-        'Globals.fEditLayout = Me
-
-        ' read in all the possible layouts, and all the add-on packs
 
     End Sub
 
@@ -67,7 +62,7 @@ Public Class EditLayout
     ' read in the .CVS file listing all the standard & custom backgrounds/foregrounds
     '
     Private Sub WriteBKFGFile(ByRef fname As String)
-        Dim i As Integer
+        'Dim i As Integer
 
         Call _bkfgwriter("C:\onsite\backgrounds\" + fname, False)
 
@@ -137,27 +132,6 @@ Public Class EditLayout
         
     End Sub
 
-    Private Sub setupdefaultlayout(index As Integer)
-
-        ' this sets up a default bkg/fg layout set.  Hopefully, set '000' is intalled..
-
-        Globals.BkFgName(index) = "layout name?"
-        Globals.BkFgSetName(index) = "action set name?"
-        Globals.BkFgFolder(index) = "000"
-        Globals.BkFgGifLayers(index) = 4
-        Globals.BkFgCustLayers(index) = 1
-        Globals.BkFgFGSelect(index) = -1
-        Globals.BkFgBKSelect(index) = -1
-        Globals.BkFgMultLayers(index) = -1
-        Globals.BkFgImage1Bk(index) = -1
-        Globals.BkFgImage2Bk(index) = -1
-        Globals.BkFgImage3Bk(index) = -1
-        Globals.BkFgImage4Bk(index) = -1
-        Globals.BkFgAnimated(index) = -1
-        Globals.BkFgRatio(index) = 31
-        Globals.BkFgGIFDelay(index) = 0
-
-    End Sub
 
     Private Sub _bkfgwriter(ByRef fname As String, ByVal first As Boolean)
         Dim i As Integer
@@ -302,7 +276,7 @@ Public Class EditLayout
 
         Globals.BkFgIndex = index
 
-        tbActionName.Text = Globals.BkFgSetName(index)         '= arrCurrentRow(1)
+        tbActionSetName.Text = Globals.BkFgSetName(index)         '= arrCurrentRow(1)
         txtFolderName.Text = Globals.BkFgFolder(index)         '= arrCurrentRow(2)
         txtImagePerGIF.Text = Globals.BkFgGifLayers(index)     '= arrCurrentRow(3)
         txtImagesPerPrint.Text = Globals.BkFgCustLayers(index) '= arrCurrentRow(4)
@@ -448,8 +422,8 @@ Public Class EditLayout
     Private Sub EditFormSaveLayout(ByVal index As Integer)
 
         'Globals.BkFgIndex = index
-
-        Globals.BkFgSetName(index) = tbActionName.Text         '= arrCurrentRow(1)
+        Globals.BkFgName(index) = cbLayoutSelected.Text
+        Globals.BkFgSetName(index) = tbActionSetName.Text         '= arrCurrentRow(1)
         Globals.BkFgFolder(index) = txtFolderName.Text         '= arrCurrentRow(2)
         Globals.BkFgGifLayers(index) = txtImagePerGIF.Text     '= arrCurrentRow(3)
         Globals.BkFgCustLayers(index) = txtImagesPerPrint.Text '= arrCurrentRow(4)
@@ -575,6 +549,128 @@ Public Class EditLayout
 
     End Sub
 
+    Private Sub NewRowButton_Click(sender As System.Object, e As System.EventArgs) Handles NewLayout.Click
+        Dim cc As Integer = 0
+        Dim dnum As Integer
+        Dim newNam As String
+
+        Do
+
+            ' validate the 3 digit folder #
+            If txtFolderName.Text.Length <> 3 Then
+                MsgBox("Bad 3 digit number, please try again")
+                cc = 1
+                Exit Do
+            Else
+
+                dnum = CInt(Int(txtFolderName.Text))
+                Exit Do
+            End If
+
+        Loop
+
+        ' attempt to create a folder for the new number
+        ' creat entry into name string cb
+        ' add the new name
+        newNam = txtFolderName.Text + " New Layout"
+
+        ' add to the bottom of the list
+        cbLayoutSelected.Items.Add(newNam)
+
+        ' create a new data for this entry
+        setupdefaultlayout(newNam, txtFolderName.Text, cbLayoutSelected.Items.Count() - 1)
+
+        ' add one to the array of data
+        Globals.BkFgMax = cbLayoutSelected.Items.Count
+
+        ' point to the new entry
+        Globals.BkFgIndex = cbLayoutSelected.Items.Count - 1
+
+        ' load the new data into the form instance data
+        EditFormLoadLayout(Globals.BkFgIndex)
+
+        ' point the list at the new entry
+        cbLayoutSelected.SelectedIndex = Globals.BkFgIndex
+
+    End Sub
+
+    Private Sub DeleteThisLayout_Click(sender As System.Object, e As System.EventArgs) Handles DeleteThisLayout.Click
+        Dim cc As MsgBoxResult
+
+        ' can delete the one last entry..
+        If Globals.BkFgMax = 1 Then
+            MsgBox("Minimum of one layout needed per set")
+            Return
+        End If
+
+        ' verify this is okay
+        cc = MsgBox("Are you sure you want to delete """ + cbLayoutSelected.Text + "?""", MsgBoxStyle.OkCancel, "Delete this layout?")
+
+        ' 1 is okay!
+        If cc = 1 Then
+
+            ' kill the entry in the combo box
+            cbLayoutSelected.Items.RemoveAt(cbLayoutSelected.SelectedIndex)
+
+            ' copy the array back overwritting one entry
+            For i = Globals.BkFgIndex To Globals.BkFgMax - 1
+                Globals.BkFgName(i) = Globals.BkFgName(i + 1)
+                Globals.BkFgSetName(i) = Globals.BkFgSetName(i + 1)
+                Globals.BkFgFolder(i) = Globals.BkFgFolder(i + 1)
+                Globals.BkFgGifLayers(i) = Globals.BkFgGifLayers(i + 1)
+                Globals.BkFgCustLayers(i) = Globals.BkFgCustLayers(i + 1)
+                Globals.BkFgFGSelect(i) = Globals.BkFgFGSelect(i + 1)
+                Globals.BkFgBKSelect(i) = Globals.BkFgBKSelect(i + 1)
+                Globals.BkFgMultLayers(i) = Globals.BkFgMultLayers(i + 1)
+                Globals.BkFgImage1Bk(i) = Globals.BkFgImage1Bk(i + 1)
+                Globals.BkFgImage2Bk(i) = Globals.BkFgImage2Bk(i + 1)
+                Globals.BkFgImage3Bk(i) = Globals.BkFgImage3Bk(i + 1)
+                Globals.BkFgImage4Bk(i) = Globals.BkFgImage4Bk(i + 1)
+                Globals.BkFgAnimated(i) = Globals.BkFgAnimated(i + 1)
+                Globals.BkFgRatio(i) = Globals.BkFgRatio(i + 1)
+                Globals.BkFgGIFDelay(i) = Globals.BkFgGIFDelay(i + 1)
+
+            Next
+
+            ' reduce the counters to forget this entry
+            If Globals.BkFgIndex > 0 Then
+                Globals.BkFgIndex -= 1
+                Globals.BkFgMax -= 1
+            End If
+
+            ' point to the first entry
+            cbLayoutSelected.SelectedIndex = 0
+
+        End If
+
+    End Sub
+
+    Private Sub tbActionName_TextChanged(sender As System.Object, e As System.EventArgs) Handles tbActionSetName.TextChanged
+
+    End Sub
+
+    Private Sub setupdefaultlayout(nam As String, dirNam As String, index As Integer)
+
+        ' this sets up a default bkg/fg layout set.  Hopefully, set '000' is intalled..
+
+        Globals.BkFgName(index) = nam
+        Globals.BkFgSetName(index) = tbActionSetName.Text
+        Globals.BkFgFolder(index) = dirNam
+        Globals.BkFgGifLayers(index) = 4
+        Globals.BkFgCustLayers(index) = 1
+        Globals.BkFgFGSelect(index) = -1
+        Globals.BkFgBKSelect(index) = -1
+        Globals.BkFgMultLayers(index) = -1
+        Globals.BkFgImage1Bk(index) = -1
+        Globals.BkFgImage2Bk(index) = -1
+        Globals.BkFgImage3Bk(index) = -1
+        Globals.BkFgImage4Bk(index) = -1
+        Globals.BkFgAnimated(index) = -1
+        Globals.BkFgRatio(index) = 31
+        Globals.BkFgGIFDelay(index) = 0
+
+    End Sub
+
 End Class
 
 
@@ -582,7 +678,7 @@ End Class
 
 Public Class Globals
 
-    Public Shared Version As String = "Version 0.04"    ' Version string
+    Public Shared Version As String = "Version 0.05"    ' Version string
 
     ' the form instances
     Public Shared fOpenLayout As OpenLayout

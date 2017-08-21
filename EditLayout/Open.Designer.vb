@@ -26,6 +26,7 @@ Partial Class OpenLayout
         Me.btnFolderDialog = New System.Windows.Forms.Button()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.grpOpenDialog = New System.Windows.Forms.GroupBox()
+        Me.DeleteLayoutSet = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.btnNewLayout = New System.Windows.Forms.Button()
@@ -56,6 +57,7 @@ Partial Class OpenLayout
         '
         'grpOpenDialog
         '
+        Me.grpOpenDialog.Controls.Add(Me.DeleteLayoutSet)
         Me.grpOpenDialog.Controls.Add(Me.btnCancel)
         Me.grpOpenDialog.Controls.Add(Me.btnEdit)
         Me.grpOpenDialog.Controls.Add(Me.btnNewLayout)
@@ -71,9 +73,18 @@ Partial Class OpenLayout
         Me.grpOpenDialog.TabStop = False
         Me.grpOpenDialog.Text = "Open Layout Group"
         '
+        'DeleteLayoutSet
+        '
+        Me.DeleteLayoutSet.Location = New System.Drawing.Point(195, 141)
+        Me.DeleteLayoutSet.Name = "DeleteLayoutSet"
+        Me.DeleteLayoutSet.Size = New System.Drawing.Size(75, 23)
+        Me.DeleteLayoutSet.TabIndex = 8
+        Me.DeleteLayoutSet.Text = "Delete Set"
+        Me.DeleteLayoutSet.UseVisualStyleBackColor = True
+        '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(239, 141)
+        Me.btnCancel.Location = New System.Drawing.Point(293, 141)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 7
@@ -82,11 +93,11 @@ Partial Class OpenLayout
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(132, 141)
+        Me.btnEdit.Location = New System.Drawing.Point(109, 141)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(75, 23)
         Me.btnEdit.TabIndex = 6
-        Me.btnEdit.Text = "Edit Group"
+        Me.btnEdit.Text = "Edit Set"
         Me.btnEdit.UseVisualStyleBackColor = True
         '
         'btnNewLayout
@@ -96,7 +107,7 @@ Partial Class OpenLayout
         Me.btnNewLayout.Name = "btnNewLayout"
         Me.btnNewLayout.Size = New System.Drawing.Size(75, 23)
         Me.btnNewLayout.TabIndex = 5
-        Me.btnNewLayout.Text = "New Group"
+        Me.btnNewLayout.Text = "New Set"
         Me.btnNewLayout.UseVisualStyleBackColor = True
         '
         'cbAllLayouts
@@ -112,9 +123,9 @@ Partial Class OpenLayout
         Me.lblChooseLayout.AutoSize = True
         Me.lblChooseLayout.Location = New System.Drawing.Point(18, 81)
         Me.lblChooseLayout.Name = "lblChooseLayout"
-        Me.lblChooseLayout.Size = New System.Drawing.Size(147, 13)
+        Me.lblChooseLayout.Size = New System.Drawing.Size(166, 13)
         Me.lblChooseLayout.TabIndex = 3
-        Me.lblChooseLayout.Text = "Choose a Layout in this group"
+        Me.lblChooseLayout.Text = "Choose a Layout Set in this group"
         '
         'lblChoosePath
         '
@@ -132,7 +143,7 @@ Partial Class OpenLayout
         Me.ClientSize = New System.Drawing.Size(443, 239)
         Me.Controls.Add(Me.grpOpenDialog)
         Me.Name = "OpenLayout"
-        Me.Text = "Open"
+        Me.Text = "Layout Editor"
         Me.grpOpenDialog.ResumeLayout(False)
         Me.grpOpenDialog.PerformLayout()
         Me.ResumeLayout(False)
@@ -148,4 +159,5 @@ Partial Class OpenLayout
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents btnEdit As System.Windows.Forms.Button
     Friend WithEvents btnNewLayout As System.Windows.Forms.Button
+    Friend WithEvents DeleteLayoutSet As System.Windows.Forms.Button
 End Class

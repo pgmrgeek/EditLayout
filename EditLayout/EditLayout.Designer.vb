@@ -24,11 +24,13 @@ Partial Class EditLayout
     Private Sub InitializeComponent()
         Me.btnSaveClose = New System.Windows.Forms.Button()
         Me.grpLayout = New System.Windows.Forms.GroupBox()
+        Me.DeleteThisLayout = New System.Windows.Forms.Button()
+        Me.lblActionSetName = New System.Windows.Forms.Label()
+        Me.tbActionSetName = New System.Windows.Forms.TextBox()
         Me.cbEnaMultiples = New System.Windows.Forms.CheckBox()
         Me.cbEnaGrnScrn = New System.Windows.Forms.CheckBox()
         Me.cbEnaOvrly = New System.Windows.Forms.CheckBox()
-        Me.NewRowButton = New System.Windows.Forms.Button()
-        Me.tbActionName = New System.Windows.Forms.TextBox()
+        Me.NewLayout = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.gbHorzLayouts = New System.Windows.Forms.GroupBox()
         Me.cbHorzNameRatio = New System.Windows.Forms.CheckBox()
@@ -67,7 +69,6 @@ Partial Class EditLayout
         Me.txtImagePerGIF = New System.Windows.Forms.TextBox()
         Me.lblFolderName = New System.Windows.Forms.Label()
         Me.txtFolderName = New System.Windows.Forms.TextBox()
-        Me.lblActionSetName = New System.Windows.Forms.Label()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.grpLayout.SuspendLayout()
         Me.gbHorzLayouts.SuspendLayout()
@@ -78,7 +79,7 @@ Partial Class EditLayout
         '
         'btnSaveClose
         '
-        Me.btnSaveClose.Location = New System.Drawing.Point(120, 321)
+        Me.btnSaveClose.Location = New System.Drawing.Point(682, 331)
         Me.btnSaveClose.Name = "btnSaveClose"
         Me.btnSaveClose.Size = New System.Drawing.Size(87, 23)
         Me.btnSaveClose.TabIndex = 0
@@ -87,11 +88,13 @@ Partial Class EditLayout
         '
         'grpLayout
         '
+        Me.grpLayout.Controls.Add(Me.DeleteThisLayout)
+        Me.grpLayout.Controls.Add(Me.lblActionSetName)
+        Me.grpLayout.Controls.Add(Me.tbActionSetName)
         Me.grpLayout.Controls.Add(Me.cbEnaMultiples)
         Me.grpLayout.Controls.Add(Me.cbEnaGrnScrn)
         Me.grpLayout.Controls.Add(Me.cbEnaOvrly)
-        Me.grpLayout.Controls.Add(Me.NewRowButton)
-        Me.grpLayout.Controls.Add(Me.tbActionName)
+        Me.grpLayout.Controls.Add(Me.NewLayout)
         Me.grpLayout.Controls.Add(Me.btnCancel)
         Me.grpLayout.Controls.Add(Me.gbHorzLayouts)
         Me.grpLayout.Controls.Add(Me.gbVertLayouts)
@@ -118,20 +121,45 @@ Partial Class EditLayout
         Me.grpLayout.Controls.Add(Me.txtImagePerGIF)
         Me.grpLayout.Controls.Add(Me.lblFolderName)
         Me.grpLayout.Controls.Add(Me.txtFolderName)
-        Me.grpLayout.Controls.Add(Me.lblActionSetName)
         Me.grpLayout.Controls.Add(Me.btnSave)
         Me.grpLayout.Controls.Add(Me.btnSaveClose)
         Me.grpLayout.Location = New System.Drawing.Point(30, 12)
         Me.grpLayout.Name = "grpLayout"
-        Me.grpLayout.Size = New System.Drawing.Size(878, 360)
+        Me.grpLayout.Size = New System.Drawing.Size(878, 373)
         Me.grpLayout.TabIndex = 1
         Me.grpLayout.TabStop = False
         Me.grpLayout.Text = "Edit the Layouts in this Group"
         '
+        'DeleteThisLayout
+        '
+        Me.DeleteThisLayout.Location = New System.Drawing.Point(176, 69)
+        Me.DeleteThisLayout.Name = "DeleteThisLayout"
+        Me.DeleteThisLayout.Size = New System.Drawing.Size(114, 23)
+        Me.DeleteThisLayout.TabIndex = 39
+        Me.DeleteThisLayout.Text = "Delete this Layout"
+        Me.DeleteThisLayout.UseVisualStyleBackColor = True
+        '
+        'lblActionSetName
+        '
+        Me.lblActionSetName.AutoSize = True
+        Me.lblActionSetName.Location = New System.Drawing.Point(15, 16)
+        Me.lblActionSetName.Name = "lblActionSetName"
+        Me.lblActionSetName.Size = New System.Drawing.Size(141, 13)
+        Me.lblActionSetName.TabIndex = 5
+        Me.lblActionSetName.Text = "Photoshop Action Set Name"
+        '
+        'tbActionSetName
+        '
+        Me.tbActionSetName.Enabled = False
+        Me.tbActionSetName.Location = New System.Drawing.Point(25, 35)
+        Me.tbActionSetName.Name = "tbActionSetName"
+        Me.tbActionSetName.Size = New System.Drawing.Size(284, 20)
+        Me.tbActionSetName.TabIndex = 34
+        '
         'cbEnaMultiples
         '
         Me.cbEnaMultiples.AutoSize = True
-        Me.cbEnaMultiples.Location = New System.Drawing.Point(355, 151)
+        Me.cbEnaMultiples.Location = New System.Drawing.Point(355, 162)
         Me.cbEnaMultiples.Name = "cbEnaMultiples"
         Me.cbEnaMultiples.Size = New System.Drawing.Size(32, 17)
         Me.cbEnaMultiples.TabIndex = 38
@@ -141,7 +169,7 @@ Partial Class EditLayout
         'cbEnaGrnScrn
         '
         Me.cbEnaGrnScrn.AutoSize = True
-        Me.cbEnaGrnScrn.Location = New System.Drawing.Point(355, 115)
+        Me.cbEnaGrnScrn.Location = New System.Drawing.Point(355, 126)
         Me.cbEnaGrnScrn.Name = "cbEnaGrnScrn"
         Me.cbEnaGrnScrn.Size = New System.Drawing.Size(32, 17)
         Me.cbEnaGrnScrn.TabIndex = 37
@@ -151,32 +179,25 @@ Partial Class EditLayout
         'cbEnaOvrly
         '
         Me.cbEnaOvrly.AutoSize = True
-        Me.cbEnaOvrly.Location = New System.Drawing.Point(355, 75)
+        Me.cbEnaOvrly.Location = New System.Drawing.Point(355, 86)
         Me.cbEnaOvrly.Name = "cbEnaOvrly"
         Me.cbEnaOvrly.Size = New System.Drawing.Size(32, 17)
         Me.cbEnaOvrly.TabIndex = 36
         Me.cbEnaOvrly.Text = "+"
         Me.cbEnaOvrly.UseVisualStyleBackColor = True
         '
-        'NewRowButton
+        'NewLayout
         '
-        Me.NewRowButton.Location = New System.Drawing.Point(219, 149)
-        Me.NewRowButton.Name = "NewRowButton"
-        Me.NewRowButton.Size = New System.Drawing.Size(75, 23)
-        Me.NewRowButton.TabIndex = 35
-        Me.NewRowButton.Text = "New Row"
-        Me.NewRowButton.UseVisualStyleBackColor = True
-        '
-        'tbActionName
-        '
-        Me.tbActionName.Location = New System.Drawing.Point(27, 38)
-        Me.tbActionName.Name = "tbActionName"
-        Me.tbActionName.Size = New System.Drawing.Size(284, 20)
-        Me.tbActionName.TabIndex = 34
+        Me.NewLayout.Location = New System.Drawing.Point(42, 69)
+        Me.NewLayout.Name = "NewLayout"
+        Me.NewLayout.Size = New System.Drawing.Size(114, 23)
+        Me.NewLayout.TabIndex = 35
+        Me.NewLayout.Text = "New Layout"
+        Me.NewLayout.UseVisualStyleBackColor = True
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(213, 321)
+        Me.btnCancel.Location = New System.Drawing.Point(775, 331)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 33
@@ -188,7 +209,7 @@ Partial Class EditLayout
         Me.gbHorzLayouts.Controls.Add(Me.cbHorzNameRatio)
         Me.gbHorzLayouts.Controls.Add(Me.cbHorzNameNumbers)
         Me.gbHorzLayouts.Controls.Add(Me.cbHorzSupported)
-        Me.gbHorzLayouts.Location = New System.Drawing.Point(562, 111)
+        Me.gbHorzLayouts.Location = New System.Drawing.Point(564, 122)
         Me.gbHorzLayouts.Name = "gbHorzLayouts"
         Me.gbHorzLayouts.Size = New System.Drawing.Size(291, 92)
         Me.gbHorzLayouts.TabIndex = 32
@@ -230,7 +251,7 @@ Partial Class EditLayout
         Me.gbVertLayouts.Controls.Add(Me.cbVertNameRatio)
         Me.gbVertLayouts.Controls.Add(Me.cbVertNameNumbers)
         Me.gbVertLayouts.Controls.Add(Me.cbVertSupported)
-        Me.gbVertLayouts.Location = New System.Drawing.Point(562, 13)
+        Me.gbVertLayouts.Location = New System.Drawing.Point(564, 24)
         Me.gbVertLayouts.Name = "gbVertLayouts"
         Me.gbVertLayouts.Size = New System.Drawing.Size(291, 92)
         Me.gbVertLayouts.TabIndex = 31
@@ -274,7 +295,7 @@ Partial Class EditLayout
         Me.grpRatios.Controls.Add(Me.cbRatio140)
         Me.grpRatios.Controls.Add(Me.cbRatio133)
         Me.grpRatios.Controls.Add(Me.cbRatio125)
-        Me.grpRatios.Location = New System.Drawing.Point(19, 179)
+        Me.grpRatios.Location = New System.Drawing.Point(23, 218)
         Me.grpRatios.Name = "grpRatios"
         Me.grpRatios.Size = New System.Drawing.Size(291, 136)
         Me.grpRatios.TabIndex = 30
@@ -335,7 +356,7 @@ Partial Class EditLayout
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label4.Location = New System.Drawing.Point(352, 173)
+        Me.Label4.Location = New System.Drawing.Point(352, 184)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(141, 13)
         Me.Label4.TabIndex = 29
@@ -344,7 +365,7 @@ Partial Class EditLayout
         'lblImagesPerCustom
         '
         Me.lblImagesPerCustom.AutoSize = True
-        Me.lblImagesPerCustom.Location = New System.Drawing.Point(382, 192)
+        Me.lblImagesPerCustom.Location = New System.Drawing.Point(382, 203)
         Me.lblImagesPerCustom.Name = "lblImagesPerCustom"
         Me.lblImagesPerCustom.Size = New System.Drawing.Size(129, 13)
         Me.lblImagesPerCustom.TabIndex = 28
@@ -352,7 +373,7 @@ Partial Class EditLayout
         '
         'tbImagesPerCustom
         '
-        Me.tbImagesPerCustom.Location = New System.Drawing.Point(354, 189)
+        Me.tbImagesPerCustom.Location = New System.Drawing.Point(354, 200)
         Me.tbImagesPerCustom.Name = "tbImagesPerCustom"
         Me.tbImagesPerCustom.Size = New System.Drawing.Size(22, 20)
         Me.tbImagesPerCustom.TabIndex = 27
@@ -361,7 +382,7 @@ Partial Class EditLayout
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(351, 19)
+        Me.Label3.Location = New System.Drawing.Point(351, 30)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(192, 13)
         Me.Label3.TabIndex = 26
@@ -371,7 +392,7 @@ Partial Class EditLayout
         '
         Me.lblNumOfLayersPerGIF.AutoSize = True
         Me.lblNumOfLayersPerGIF.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblNumOfLayersPerGIF.Location = New System.Drawing.Point(352, 225)
+        Me.lblNumOfLayersPerGIF.Location = New System.Drawing.Point(352, 236)
         Me.lblNumOfLayersPerGIF.Name = "lblNumOfLayersPerGIF"
         Me.lblNumOfLayersPerGIF.Size = New System.Drawing.Size(139, 13)
         Me.lblNumOfLayersPerGIF.TabIndex = 25
@@ -381,7 +402,7 @@ Partial Class EditLayout
         '
         Me.lblChk4Delays.AutoSize = True
         Me.lblChk4Delays.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblChk4Delays.Location = New System.Drawing.Point(354, 305)
+        Me.lblChk4Delays.Location = New System.Drawing.Point(354, 316)
         Me.lblChk4Delays.Name = "lblChk4Delays"
         Me.lblChk4Delays.Size = New System.Drawing.Size(230, 13)
         Me.lblChk4Delays.TabIndex = 24
@@ -390,7 +411,7 @@ Partial Class EditLayout
         'cbChk4Delays
         '
         Me.cbChk4Delays.AutoSize = True
-        Me.cbChk4Delays.Location = New System.Drawing.Point(357, 322)
+        Me.cbChk4Delays.Location = New System.Drawing.Point(357, 333)
         Me.cbChk4Delays.Name = "cbChk4Delays"
         Me.cbChk4Delays.Size = New System.Drawing.Size(141, 17)
         Me.cbChk4Delays.TabIndex = 23
@@ -401,7 +422,7 @@ Partial Class EditLayout
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label2.Location = New System.Drawing.Point(352, 267)
+        Me.Label2.Location = New System.Drawing.Point(352, 278)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(226, 13)
         Me.Label2.TabIndex = 22
@@ -410,7 +431,7 @@ Partial Class EditLayout
         'cbBkFGareAnimated
         '
         Me.cbBkFGareAnimated.AutoSize = True
-        Me.cbBkFGareAnimated.Location = New System.Drawing.Point(357, 283)
+        Me.cbBkFGareAnimated.Location = New System.Drawing.Point(357, 294)
         Me.cbBkFGareAnimated.Name = "cbBkFGareAnimated"
         Me.cbBkFGareAnimated.Size = New System.Drawing.Size(218, 17)
         Me.cbBkFGareAnimated.TabIndex = 21
@@ -421,7 +442,7 @@ Partial Class EditLayout
         '
         Me.lblEna4BKGrnds.AutoSize = True
         Me.lblEna4BKGrnds.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblEna4BKGrnds.Location = New System.Drawing.Point(332, 135)
+        Me.lblEna4BKGrnds.Location = New System.Drawing.Point(332, 146)
         Me.lblEna4BKGrnds.Name = "lblEna4BKGrnds"
         Me.lblEna4BKGrnds.Size = New System.Drawing.Size(166, 13)
         Me.lblEna4BKGrnds.TabIndex = 20
@@ -431,7 +452,7 @@ Partial Class EditLayout
         '
         Me.lblEnaGrnScrn.AutoSize = True
         Me.lblEnaGrnScrn.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblEnaGrnScrn.Location = New System.Drawing.Point(332, 99)
+        Me.lblEnaGrnScrn.Location = New System.Drawing.Point(332, 110)
         Me.lblEnaGrnScrn.Name = "lblEnaGrnScrn"
         Me.lblEnaGrnScrn.Size = New System.Drawing.Size(198, 13)
         Me.lblEnaGrnScrn.TabIndex = 19
@@ -441,7 +462,7 @@ Partial Class EditLayout
         '
         Me.lblEnableFG.AutoSize = True
         Me.lblEnableFG.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblEnableFG.Location = New System.Drawing.Point(332, 59)
+        Me.lblEnableFG.Location = New System.Drawing.Point(332, 70)
         Me.lblEnableFG.Name = "lblEnableFG"
         Me.lblEnableFG.Size = New System.Drawing.Size(226, 13)
         Me.lblEnableFG.TabIndex = 18
@@ -450,7 +471,7 @@ Partial Class EditLayout
         'grpLayoutSelect
         '
         Me.grpLayoutSelect.Controls.Add(Me.cbLayoutSelected)
-        Me.grpLayoutSelect.Location = New System.Drawing.Point(20, 65)
+        Me.grpLayoutSelect.Location = New System.Drawing.Point(24, 104)
         Me.grpLayoutSelect.Name = "grpLayoutSelect"
         Me.grpLayoutSelect.Size = New System.Drawing.Size(290, 63)
         Me.grpLayoutSelect.TabIndex = 17
@@ -468,7 +489,7 @@ Partial Class EditLayout
         'cbUseMultipleFGBG
         '
         Me.cbUseMultipleFGBG.AutoSize = True
-        Me.cbUseMultipleFGBG.Location = New System.Drawing.Point(395, 153)
+        Me.cbUseMultipleFGBG.Location = New System.Drawing.Point(395, 164)
         Me.cbUseMultipleFGBG.Name = "cbUseMultipleFGBG"
         Me.cbUseMultipleFGBG.Size = New System.Drawing.Size(166, 17)
         Me.cbUseMultipleFGBG.TabIndex = 16
@@ -478,7 +499,7 @@ Partial Class EditLayout
         'cbUseBackground
         '
         Me.cbUseBackground.AutoSize = True
-        Me.cbUseBackground.Location = New System.Drawing.Point(395, 115)
+        Me.cbUseBackground.Location = New System.Drawing.Point(395, 126)
         Me.cbUseBackground.Name = "cbUseBackground"
         Me.cbUseBackground.Size = New System.Drawing.Size(128, 17)
         Me.cbUseBackground.TabIndex = 15
@@ -488,7 +509,7 @@ Partial Class EditLayout
         'cbUseForeground
         '
         Me.cbUseForeground.AutoSize = True
-        Me.cbUseForeground.Location = New System.Drawing.Point(395, 75)
+        Me.cbUseForeground.Location = New System.Drawing.Point(395, 86)
         Me.cbUseForeground.Name = "cbUseForeground"
         Me.cbUseForeground.Size = New System.Drawing.Size(98, 17)
         Me.cbUseForeground.TabIndex = 14
@@ -498,7 +519,7 @@ Partial Class EditLayout
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(381, 38)
+        Me.Label1.Location = New System.Drawing.Point(381, 49)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(103, 13)
         Me.Label1.TabIndex = 11
@@ -506,7 +527,7 @@ Partial Class EditLayout
         '
         'txtImagesPerPrint
         '
-        Me.txtImagesPerPrint.Location = New System.Drawing.Point(353, 35)
+        Me.txtImagesPerPrint.Location = New System.Drawing.Point(353, 46)
         Me.txtImagesPerPrint.Name = "txtImagesPerPrint"
         Me.txtImagesPerPrint.Size = New System.Drawing.Size(22, 20)
         Me.txtImagesPerPrint.TabIndex = 10
@@ -514,7 +535,7 @@ Partial Class EditLayout
         'lblGifLayers
         '
         Me.lblGifLayers.AutoSize = True
-        Me.lblGifLayers.Location = New System.Drawing.Point(382, 245)
+        Me.lblGifLayers.Location = New System.Drawing.Point(382, 256)
         Me.lblGifLayers.Name = "lblGifLayers"
         Me.lblGifLayers.Size = New System.Drawing.Size(86, 13)
         Me.lblGifLayers.TabIndex = 9
@@ -522,7 +543,7 @@ Partial Class EditLayout
         '
         'txtImagePerGIF
         '
-        Me.txtImagePerGIF.Location = New System.Drawing.Point(357, 241)
+        Me.txtImagePerGIF.Location = New System.Drawing.Point(357, 252)
         Me.txtImagePerGIF.Name = "txtImagePerGIF"
         Me.txtImagePerGIF.Size = New System.Drawing.Size(22, 20)
         Me.txtImagePerGIF.TabIndex = 8
@@ -530,7 +551,7 @@ Partial Class EditLayout
         'lblFolderName
         '
         Me.lblFolderName.AutoSize = True
-        Me.lblFolderName.Location = New System.Drawing.Point(23, 135)
+        Me.lblFolderName.Location = New System.Drawing.Point(27, 174)
         Me.lblFolderName.Name = "lblFolderName"
         Me.lblFolderName.Size = New System.Drawing.Size(185, 13)
         Me.lblFolderName.TabIndex = 7
@@ -538,23 +559,14 @@ Partial Class EditLayout
         '
         'txtFolderName
         '
-        Me.txtFolderName.Location = New System.Drawing.Point(26, 151)
+        Me.txtFolderName.Location = New System.Drawing.Point(30, 190)
         Me.txtFolderName.Name = "txtFolderName"
         Me.txtFolderName.Size = New System.Drawing.Size(48, 20)
         Me.txtFolderName.TabIndex = 6
         '
-        'lblActionSetName
-        '
-        Me.lblActionSetName.AutoSize = True
-        Me.lblActionSetName.Location = New System.Drawing.Point(17, 19)
-        Me.lblActionSetName.Name = "lblActionSetName"
-        Me.lblActionSetName.Size = New System.Drawing.Size(141, 13)
-        Me.lblActionSetName.TabIndex = 5
-        Me.lblActionSetName.Text = "Photoshop Action Set Name"
-        '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(39, 321)
+        Me.btnSave.Location = New System.Drawing.Point(601, 331)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 1
@@ -565,7 +577,7 @@ Partial Class EditLayout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(935, 393)
+        Me.ClientSize = New System.Drawing.Size(935, 409)
         Me.Controls.Add(Me.grpLayout)
         Me.Name = "EditLayout"
         Me.Text = "Edit Layout"
@@ -623,10 +635,11 @@ Partial Class EditLayout
     Friend WithEvents cbHorzNameNumbers As System.Windows.Forms.CheckBox
     Friend WithEvents cbHorzSupported As System.Windows.Forms.CheckBox
     Friend WithEvents btnCancel As System.Windows.Forms.Button
-    Friend WithEvents tbActionName As System.Windows.Forms.TextBox
-    Friend WithEvents NewRowButton As System.Windows.Forms.Button
+    Friend WithEvents tbActionSetName As System.Windows.Forms.TextBox
+    Friend WithEvents NewLayout As System.Windows.Forms.Button
     Friend WithEvents cbEnaGrnScrn As System.Windows.Forms.CheckBox
     Friend WithEvents cbEnaOvrly As System.Windows.Forms.CheckBox
     Friend WithEvents cbEnaMultiples As System.Windows.Forms.CheckBox
+    Friend WithEvents DeleteThisLayout As System.Windows.Forms.Button
 
 End Class

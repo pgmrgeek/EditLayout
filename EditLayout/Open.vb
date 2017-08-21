@@ -10,6 +10,8 @@ Public Class OpenLayout
         ' Dim fEditLayout As EditLayout
 
         Globals.fOpenLayout = Me
+        Me.Text = Me.Text + " " + Globals.Version
+
         Globals.fEditLayout = New EditLayout
 
         Globals.fEditLayout.Show()
@@ -98,6 +100,10 @@ Public Class OpenLayout
 
     Private Sub cbAllLayouts_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbAllLayouts.SelectedIndexChanged
         Globals.bkFgAllLayoutsIndex = cbAllLayouts.SelectedIndex
+    End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles DeleteLayoutSet.Click
+
     End Sub
 End Class
 
