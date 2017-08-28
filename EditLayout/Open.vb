@@ -12,6 +12,7 @@ Public Class OpenLayout
         Globals.fOpenLayout = Me
         Me.Text = Me.Text + " " + Globals.Version
 
+        Globals.fNewLayout = New NewLayout
         Globals.fEditLayout = New EditLayout
 
         Globals.fEditLayout.Show()

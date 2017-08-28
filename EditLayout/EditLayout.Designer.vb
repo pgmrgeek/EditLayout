@@ -132,7 +132,7 @@ Partial Class EditLayout
         '
         'DeleteThisLayout
         '
-        Me.DeleteThisLayout.Location = New System.Drawing.Point(176, 69)
+        Me.DeleteThisLayout.Location = New System.Drawing.Point(176, 67)
         Me.DeleteThisLayout.Name = "DeleteThisLayout"
         Me.DeleteThisLayout.Size = New System.Drawing.Size(114, 23)
         Me.DeleteThisLayout.TabIndex = 39
@@ -188,7 +188,7 @@ Partial Class EditLayout
         '
         'NewLayout
         '
-        Me.NewLayout.Location = New System.Drawing.Point(42, 69)
+        Me.NewLayout.Location = New System.Drawing.Point(42, 67)
         Me.NewLayout.Name = "NewLayout"
         Me.NewLayout.Size = New System.Drawing.Size(114, 23)
         Me.NewLayout.TabIndex = 35

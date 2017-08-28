@@ -78,6 +78,12 @@
     <Compile Include="EditLayout.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="NewLayout.Designer.vb">
+      <DependentUpon>NewLayout.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewLayout.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Open.Designer.vb">
       <DependentUpon>Open.vb</DependentUpon>
     </Compile>
@@ -109,6 +115,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewLayout.resx">
+      <DependentUpon>NewLayout.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Open.resx">
       <DependentUpon>Open.vb</DependentUpon>

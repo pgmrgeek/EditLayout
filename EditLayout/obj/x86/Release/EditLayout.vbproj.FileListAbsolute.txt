@@ -8,3 +8,4 @@ C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\
 C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\EditLayout.exe
 C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\EditLayout.xml
 C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\EditLayout.pdb
+C:\Users\User\Documents\GitHub\EditLayout\EditLayout\EditLayout\obj\x86\Release\WindowsApplication1.NewLayout.resources

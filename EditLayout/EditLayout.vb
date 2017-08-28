@@ -554,31 +554,33 @@ Public Class EditLayout
         Dim dnum As Integer
         Dim newNam As String
 
-        Do
+        ' pop it up
+        Globals.fNewLayout.Preshow()
+        Globals.fNewLayout.Show()
 
-            ' validate the 3 digit folder #
-            If txtFolderName.Text.Length <> 3 Then
-                MsgBox("Bad 3 digit number, please try again")
-                cc = 1
-                Exit Do
-            Else
-
-                dnum = CInt(Int(txtFolderName.Text))
-                Exit Do
-            End If
-
+        ' wait till the dialog closes
+        Do While Globals.nlCompletionCode = -1
+            My.Application.DoEvents()
         Loop
+
+        ' If CancelButton, then exit
+        If Globals.nlCompletionCode = 1 Then
+            cc = 1
+            Return
+        End If
+
+        dnum = CInt(Int(Globals.fNewLayout.txtFolderName.Text))
 
         ' attempt to create a folder for the new number
         ' creat entry into name string cb
         ' add the new name
-        newNam = txtFolderName.Text + " New Layout"
+        newNam = Globals.fNewLayout.txtFolderName.Text + Globals.fNewLayout.tbLayoutName.Text
 
         ' add to the bottom of the list
         cbLayoutSelected.Items.Add(newNam)
 
         ' create a new data for this entry
-        setupdefaultlayout(newNam, txtFolderName.Text, cbLayoutSelected.Items.Count() - 1)
+        setupdefaultlayout(newNam, Globals.fNewLayout.txtFolderName.Text, cbLayoutSelected.Items.Count() - 1)
 
         ' add one to the array of data
         Globals.BkFgMax = cbLayoutSelected.Items.Count
@@ -597,7 +599,7 @@ Public Class EditLayout
     Private Sub DeleteThisLayout_Click(sender As System.Object, e As System.EventArgs) Handles DeleteThisLayout.Click
         Dim cc As MsgBoxResult
 
-        ' can delete the one last entry..
+        ' cant delete the one last entry..
         If Globals.BkFgMax = 1 Then
             MsgBox("Minimum of one layout needed per set")
             Return
@@ -633,12 +635,16 @@ Public Class EditLayout
             Next
 
             ' reduce the counters to forget this entry
-            If Globals.BkFgIndex > 0 Then
-                Globals.BkFgIndex -= 1
-                Globals.BkFgMax -= 1
-            End If
+            'If Globals.BkFgMax > 1 Then
+            'Globals.BkFgIndex -= 1
+            Globals.BkFgMax -= 1
+            'End If
 
             ' point to the first entry
+            Globals.BkFgIndex = 0
+            EditFormLoadLayout(Globals.BkFgIndex)
+
+            ' point to the first layout to keep things simple
             cbLayoutSelected.SelectedIndex = 0
 
         End If
@@ -678,11 +684,12 @@ End Class
 
 Public Class Globals
 
-    Public Shared Version As String = "Version 0.05"    ' Version string
+    Public Shared Version As String = "Version 0.06"    ' Version string
 
     ' the form instances
     Public Shared fOpenLayout As OpenLayout
     Public Shared fEditLayout As EditLayout
+    Public Shared fNewLayout As NewLayout
 
     ' Array of bk/fg layouts for the user to select from
     'Public Shared BkFgStrings(256) As String        ' holds all strings from the layout file
@@ -729,6 +736,9 @@ Public Class Globals
 
     Public Shared cmtMaxCount As Integer
     Public Shared cmtStrings(256) As String
+
+    Public Shared nlCompletionCode As Integer
+
 
 End Class
 
