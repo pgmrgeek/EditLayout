@@ -677,6 +677,13 @@ Public Class EditLayout
 
     End Sub
 
+    Private Sub cbVertNameRatio_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles cbVertNameRatio.CheckedChanged
+
+    End Sub
+
+    Private Sub cbHorzNameRatio_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles cbHorzNameRatio.CheckedChanged
+
+    End Sub
 End Class
 
 
@@ -684,7 +691,7 @@ End Class
 
 Public Class Globals
 
-    Public Shared Version As String = "Version 0.06"    ' Version string
+    Public Shared Version As String = "Version 0.07"    ' Version string
 
     ' the form instances
     Public Shared fOpenLayout As OpenLayout

@@ -79,7 +79,7 @@ Partial Class EditLayout
         '
         'btnSaveClose
         '
-        Me.btnSaveClose.Location = New System.Drawing.Point(682, 331)
+        Me.btnSaveClose.Location = New System.Drawing.Point(739, 333)
         Me.btnSaveClose.Name = "btnSaveClose"
         Me.btnSaveClose.Size = New System.Drawing.Size(87, 23)
         Me.btnSaveClose.TabIndex = 0
@@ -123,9 +123,9 @@ Partial Class EditLayout
         Me.grpLayout.Controls.Add(Me.txtFolderName)
         Me.grpLayout.Controls.Add(Me.btnSave)
         Me.grpLayout.Controls.Add(Me.btnSaveClose)
-        Me.grpLayout.Location = New System.Drawing.Point(30, 12)
+        Me.grpLayout.Location = New System.Drawing.Point(12, 12)
         Me.grpLayout.Name = "grpLayout"
-        Me.grpLayout.Size = New System.Drawing.Size(878, 373)
+        Me.grpLayout.Size = New System.Drawing.Size(915, 373)
         Me.grpLayout.TabIndex = 1
         Me.grpLayout.TabStop = False
         Me.grpLayout.Text = "Edit the Layouts in this Group"
@@ -197,7 +197,7 @@ Partial Class EditLayout
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(775, 331)
+        Me.btnCancel.Location = New System.Drawing.Point(832, 333)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 33
@@ -211,19 +211,19 @@ Partial Class EditLayout
         Me.gbHorzLayouts.Controls.Add(Me.cbHorzSupported)
         Me.gbHorzLayouts.Location = New System.Drawing.Point(564, 122)
         Me.gbHorzLayouts.Name = "gbHorzLayouts"
-        Me.gbHorzLayouts.Size = New System.Drawing.Size(291, 92)
+        Me.gbHorzLayouts.Size = New System.Drawing.Size(345, 92)
         Me.gbHorzLayouts.TabIndex = 32
         Me.gbHorzLayouts.TabStop = False
-        Me.gbHorzLayouts.Text = "Check if Horizontal layouts are supported"
+        Me.gbHorzLayouts.Text = "Check box if Horizontal layouts are supported"
         '
         'cbHorzNameRatio
         '
         Me.cbHorzNameRatio.AutoSize = True
-        Me.cbHorzNameRatio.Location = New System.Drawing.Point(21, 66)
+        Me.cbHorzNameRatio.Location = New System.Drawing.Point(44, 68)
         Me.cbHorzNameRatio.Name = "cbHorzNameRatio"
-        Me.cbHorzNameRatio.Size = New System.Drawing.Size(252, 17)
+        Me.cbHorzNameRatio.Size = New System.Drawing.Size(274, 17)
         Me.cbHorzNameRatio.TabIndex = 2
-        Me.cbHorzNameRatio.Text = "Horizontal Print actions have the ratios in names"
+        Me.cbHorzNameRatio.Text = "Horizontal Print actions also have the ratios in names"
         Me.cbHorzNameRatio.UseVisualStyleBackColor = True
         '
         'cbHorzNameNumbers
@@ -253,19 +253,19 @@ Partial Class EditLayout
         Me.gbVertLayouts.Controls.Add(Me.cbVertSupported)
         Me.gbVertLayouts.Location = New System.Drawing.Point(564, 24)
         Me.gbVertLayouts.Name = "gbVertLayouts"
-        Me.gbVertLayouts.Size = New System.Drawing.Size(291, 92)
+        Me.gbVertLayouts.Size = New System.Drawing.Size(345, 92)
         Me.gbVertLayouts.TabIndex = 31
         Me.gbVertLayouts.TabStop = False
-        Me.gbVertLayouts.Text = "Check if Vertical layouts are supported"
+        Me.gbVertLayouts.Text = "Check box if Vertical layouts are supported"
         '
         'cbVertNameRatio
         '
         Me.cbVertNameRatio.AutoSize = True
-        Me.cbVertNameRatio.Location = New System.Drawing.Point(21, 66)
+        Me.cbVertNameRatio.Location = New System.Drawing.Point(44, 68)
         Me.cbVertNameRatio.Name = "cbVertNameRatio"
-        Me.cbVertNameRatio.Size = New System.Drawing.Size(240, 17)
+        Me.cbVertNameRatio.Size = New System.Drawing.Size(262, 17)
         Me.cbVertNameRatio.TabIndex = 2
-        Me.cbVertNameRatio.Text = "Vertical Print actions have the ratios in names"
+        Me.cbVertNameRatio.Text = "Vertical Print actions also have the ratios in names"
         Me.cbVertNameRatio.UseVisualStyleBackColor = True
         '
         'cbVertNameNumbers
@@ -356,7 +356,7 @@ Partial Class EditLayout
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label4.Location = New System.Drawing.Point(352, 184)
+        Me.Label4.Location = New System.Drawing.Point(332, 184)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(141, 13)
         Me.Label4.TabIndex = 29
@@ -382,7 +382,7 @@ Partial Class EditLayout
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label3.Location = New System.Drawing.Point(351, 30)
+        Me.Label3.Location = New System.Drawing.Point(332, 30)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(192, 13)
         Me.Label3.TabIndex = 26
@@ -392,7 +392,7 @@ Partial Class EditLayout
         '
         Me.lblNumOfLayersPerGIF.AutoSize = True
         Me.lblNumOfLayersPerGIF.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblNumOfLayersPerGIF.Location = New System.Drawing.Point(352, 236)
+        Me.lblNumOfLayersPerGIF.Location = New System.Drawing.Point(334, 236)
         Me.lblNumOfLayersPerGIF.Name = "lblNumOfLayersPerGIF"
         Me.lblNumOfLayersPerGIF.Size = New System.Drawing.Size(139, 13)
         Me.lblNumOfLayersPerGIF.TabIndex = 25
@@ -402,7 +402,7 @@ Partial Class EditLayout
         '
         Me.lblChk4Delays.AutoSize = True
         Me.lblChk4Delays.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.lblChk4Delays.Location = New System.Drawing.Point(354, 316)
+        Me.lblChk4Delays.Location = New System.Drawing.Point(335, 314)
         Me.lblChk4Delays.Name = "lblChk4Delays"
         Me.lblChk4Delays.Size = New System.Drawing.Size(230, 13)
         Me.lblChk4Delays.TabIndex = 24
@@ -422,7 +422,7 @@ Partial Class EditLayout
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.SystemColors.ControlDark
-        Me.Label2.Location = New System.Drawing.Point(352, 278)
+        Me.Label2.Location = New System.Drawing.Point(335, 278)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(226, 13)
         Me.Label2.TabIndex = 22
@@ -433,9 +433,9 @@ Partial Class EditLayout
         Me.cbBkFGareAnimated.AutoSize = True
         Me.cbBkFGareAnimated.Location = New System.Drawing.Point(357, 294)
         Me.cbBkFGareAnimated.Name = "cbBkFGareAnimated"
-        Me.cbBkFGareAnimated.Size = New System.Drawing.Size(218, 17)
+        Me.cbBkFGareAnimated.Size = New System.Drawing.Size(240, 17)
         Me.cbBkFGareAnimated.TabIndex = 21
-        Me.cbBkFGareAnimated.Text = "Backgrounds/Foregrounds are Animated"
+        Me.cbBkFGareAnimated.Text = "Use Backgrounds/Foregrounds in Animations"
         Me.cbBkFGareAnimated.UseVisualStyleBackColor = True
         '
         'lblEna4BKGrnds
@@ -566,7 +566,7 @@ Partial Class EditLayout
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(601, 331)
+        Me.btnSave.Location = New System.Drawing.Point(658, 333)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 23)
         Me.btnSave.TabIndex = 1
@@ -577,7 +577,7 @@ Partial Class EditLayout
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(935, 409)
+        Me.ClientSize = New System.Drawing.Size(939, 398)
         Me.Controls.Add(Me.grpLayout)
         Me.Name = "EditLayout"
         Me.Text = "Edit Layout"

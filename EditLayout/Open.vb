@@ -64,6 +64,9 @@ Public Class OpenLayout
 
     End Sub
 
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles DeleteLayoutSet.Click
+
+    End Sub
 
     Private Sub LoadCSVFileNames()
         Dim files As New List(Of FileInfo)(New DirectoryInfo("C:\onsite\backgrounds\").GetFiles("bkfglayouts.*"))
@@ -103,9 +106,6 @@ Public Class OpenLayout
         Globals.bkFgAllLayoutsIndex = cbAllLayouts.SelectedIndex
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles DeleteLayoutSet.Click
-
-    End Sub
 End Class
 
 
