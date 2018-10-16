@@ -276,7 +276,7 @@ Public Class EditLayout
 
         Globals.BkFgIndex = index
 
-        tbActionSetName.Text = Globals.BkFgSetName(index)         '= arrCurrentRow(1)
+        tbActionSetName.Text = Globals.BkFgSetName(index)      '= arrCurrentRow(1)
         txtFolderName.Text = Globals.BkFgFolder(index)         '= arrCurrentRow(2)
         txtImagePerGIF.Text = Globals.BkFgGifLayers(index)     '= arrCurrentRow(3)
         txtImagesPerPrint.Text = Globals.BkFgCustLayers(index) '= arrCurrentRow(4)
@@ -422,7 +422,7 @@ Public Class EditLayout
     Private Sub EditFormSaveLayout(ByVal index As Integer)
 
         'Globals.BkFgIndex = index
-        Globals.BkFgName(index) = cbLayoutSelected.Text
+        'Globals.BkFgName(index) = cbLayoutSelected.text   ' no need to save from the CB, the list holds the name already
         Globals.BkFgSetName(index) = tbActionSetName.Text         '= arrCurrentRow(1)
         Globals.BkFgFolder(index) = txtFolderName.Text         '= arrCurrentRow(2)
         Globals.BkFgGifLayers(index) = txtImagePerGIF.Text     '= arrCurrentRow(3)
@@ -691,7 +691,7 @@ End Class
 
 Public Class Globals
 
-    Public Shared Version As String = "Version 0.07"    ' Version string
+    Public Shared Version As String = "Version 0.08"    ' Version string
 
     ' the form instances
     Public Shared fOpenLayout As OpenLayout
